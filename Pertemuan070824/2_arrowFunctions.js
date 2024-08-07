@@ -6,4 +6,4 @@ function bio(umur) {
 // Arrow function
 const bio = (umur) => `Saya berumur ${umur}`;
   
-console.log(bio(17)); // Output: Halo, Mirza
+console.log(bio(17)); // Saya berumur 17
