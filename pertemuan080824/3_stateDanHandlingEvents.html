@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>React App</title>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <!-- Menyertakan React, React DOM, dan Babel -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    // Mendefinisikan komponen fungsi bernama "Counter"
+    class Counter extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { count: 0 };
+        this.increment = this.increment.bind(this);
+      }
+      // Fungsi untuk menambah nilai "count" ketika tombol ditekan
+      increment() {
+        this.setState({ count: this.state.count + 1 });
+      }
+      // Mengembalikan elemen JSX dengan nilai count dan tombol untuk menambah count
+      render() {
+        return (
+          <div>
+            <p>Hitungan: {this.state.count}</p>
+            <button onClick={this.increment}>Tambah</button>
+          </div>
+        );
+      }
+    }
+    // Merender komponen "Counter" ke dalam elemen dengan id "root"
+    ReactDOM.render(<Counter />, document.getElementById('root'));
+
+  </script>
+</body>
+
+</html>
