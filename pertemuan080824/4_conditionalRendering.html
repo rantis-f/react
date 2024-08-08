@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>React App</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- Menyertakan React, React DOM, dan Babel -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+       // Mendefinisikan komponen fungsi bernama "Greeting"
+function Greeting(props) {
+  // Menggunakan operator ternary untuk memutuskan teks yang akan dirender berdasarkan nilai props.isLoggedIn
+  const isLoggedIn = props.isLoggedIn;
+  return (
+    <div>
+      {isLoggedIn ? (
+        <h1>Welcome back!</h1>
+      ) : (
+        <h1>Login again</h1>
+      )}
+    </div>
+  );
+}
+
+// Merender komponen "Greeting" dengan props isLoggedIn bernilai false
+ReactDOM.render(<Greeting isLoggedIn={false} />, document.getElementById('root'))
+    </script>
+</body>
+
+</html>
