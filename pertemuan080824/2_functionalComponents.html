@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React App</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Menyertakan React, React DOM, dan Babel -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+      // Mendefinisikan komponen fungsi bernama "Greeting"
+    function Greeting(props) {
+      // Menggunakan props untuk mengambil data dan mengembalikan elemen h1 dengan teks yang dipersonalisasi
+  return <h1>Hello, {props.name}!</h1>;
+}
+
+ReactDOM.render(<Greeting name="Rantis" />, document.getElementById('root'));
+  </script>
+</body>
+</html>
